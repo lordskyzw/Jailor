@@ -1,3 +1,9 @@
-This is a <b> very dangerous</b> tool. Do not tamper with it.
+This is a  very dangerous tool. Do not tamper with it.
 
 Worst case scenario, you may lock yourself out of your own system.
+
+FULL DISLCAIMER, I AM NOT RESPONSIBLE FOR THE USE OF THIS TOOL.
+
+Steps
+1) run master.py on master server
+2) run client.py with filepath as only argument.
