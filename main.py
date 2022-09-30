@@ -1,4 +1,4 @@
-#from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet
 import os
 import argparse
 
@@ -10,7 +10,10 @@ itemPath = args.path
 
 target = os.path(itemPath)
 print(target)
-#key = Fernet.generate_key()
+key = Fernet.generate_key()
+
+with open("thekey.key", "wb") as thekey:
+    thekey.write(key)
 
 #Fernet.encrypt(key, b"target")
 
