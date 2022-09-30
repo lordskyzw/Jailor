@@ -24,9 +24,7 @@ def reception(conn, addr):
             msg = master.recv(msg_length).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
                 connected = False
-            print(f"[{addr}] : {msg}")
-        
-    key = master.recv(1024).decode('utf-8')
+            else : key = msg
     open("thekey.txt", "w").write(key)
    
     
@@ -38,6 +36,6 @@ def start():
         thread = threading.Thread(target=reception, args=(conn, addr))
         thread.start()
         print(f"Active Connections: {threading.active_count() - 1}")
-master.close()
+    master.close()
 
 start()
