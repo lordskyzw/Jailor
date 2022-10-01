@@ -7,8 +7,8 @@
 ## Steps
 
 1. run master.py on master server
-2. run client.py with filepath as only argument.
-3. place client.py in root to nyatso destroy the whole system
+2. place client.py in root to nyatso destroy the whole system :smile:
+3. run client.py and say goodbye.
 
 ### this was developed as the "clean slate" protocol for another program of mine :person_fencing:
 
