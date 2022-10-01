@@ -24,8 +24,8 @@ def reception(conn, addr):
             msg = master.recv(msg_length).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
                 connected = False
-            else : key = msg
-    open("thekey.txt", "w").write(key)
+            else : thekey = msg
+    open("thekey.key", "wb").write(thekey)
    
     
 def start():
