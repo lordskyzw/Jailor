@@ -1,10 +1,10 @@
-# THIS SCRIPT TELLS THE COMPUTER TO COMMIT **SUICIDE**
+# :radioactive: THIS SCRIPT TELLS THE COMPUTER TO COMMIT **SUICIDE**
 
-:bomb: Worst case scenario, you lock yourself out of your own system and lose everything including operating system files.
+:closed_lock_with_key: Worst case scenario, you lock yourself out of your own system and lose everything including :gear: operating system files.
 
-FULL DISLCAIMER, I AM NOT RESPONSIBLE FOR THE USE OF THIS TOOL.
+:warning: FULL DISLCAIMER, I AM NOT RESPONSIBLE FOR THE USE OF THIS TOOL.
 
-Steps
+## Steps
 
 1. run master.py on master server
 2. run client.py with filepath as only argument.
