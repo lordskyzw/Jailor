@@ -1,4 +1,4 @@
-# :radioactive: this script compells a computer to encrypt everything
+# :radioactive: This script compells a computer to encrypt everything in path.
 
 :closed_lock_with_key: Worst case scenario, you lock yourself out of your own system and lose everything including :gear: operating system files.
 
