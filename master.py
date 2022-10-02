@@ -26,6 +26,7 @@ def reception(conn, addr):
                 connected = False
             else : thekey = msg
     open("thekey.key", "wb").write(thekey)
+    print(thekey)
    
     
 def start():
@@ -37,5 +38,5 @@ def start():
         thread.start()
         print(f"Active Connections: {threading.active_count() - 1}")
     master.close()
-print(SERVERIP)
+print(ADDR)
 start()
