@@ -37,5 +37,5 @@ def start():
         thread.start()
         print(f"Active Connections: {threading.active_count() - 1}")
     master.close()
-
+print(SERVERIP)
 start()

@@ -6,11 +6,11 @@
 
 ## Steps
 
-1. run master.py on master server
-2. place client.py in root to nyatso destroy the whole system :smile:
-3. run client.py and say goodbye.
+1. run master.py on master server & obtain master's ip from console
+2. edit master's ip and port in client.py & place client.py in root to nyatso destroy the whole system :smile:
+3. run client.py and say goodbye to client machine.
 
-### this was developed as the "clean slate" protocol for another program of mine :person_fencing:
+### this was developed as the "Clean Slate" protocol for another program of mine :person_fencing:
 
 ToDo:
 
