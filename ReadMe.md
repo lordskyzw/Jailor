@@ -4,6 +4,8 @@
 
 :warning: FULL DISLCAIMER, I AM NOT RESPONSIBLE FOR THE USE OF THIS TOOL.
 
+make sure you check the lab folder and understand what is happening in there.
+
 ## Steps
 
 1. run master.py on master server & obtain master's ip from console
