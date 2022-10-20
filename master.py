@@ -37,6 +37,6 @@ def start():
         thread = threading.Thread(target=reception, args=(conn, addr))
         thread.start()
         print(f"Active Connections: {threading.active_count() - 1}")
-    master.close()
+
 print(ADDR)
 start()
