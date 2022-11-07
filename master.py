@@ -1,3 +1,5 @@
+#THIS ONLY SERVES TO RECEIVE THE SECRET KEY
+
 import socket
 import threading
 

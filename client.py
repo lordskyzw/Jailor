@@ -4,7 +4,7 @@ import socket
 import multiprocessing as mp
 
 
-MASTER = "192.168.56.1"
+MASTER = "ENTER MASTER IP ADDRESS"
 PORT = 6969
 ADDR = (MASTER, PORT)
 FORMAT = "utf-8"
