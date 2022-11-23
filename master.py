@@ -2,6 +2,7 @@
 
 import socket
 import threading
+from Laboratory import encryption
 
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE ="Disconnected!"
