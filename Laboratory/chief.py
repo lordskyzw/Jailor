@@ -21,3 +21,4 @@ def chatserver():
         
     for sock in ready_to_read:
         if sock == chief_socket:
+            print("New connection")
