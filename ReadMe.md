@@ -17,3 +17,4 @@ make sure you check the lab folder and understand what is happening in there.
 ToDo:
 
 [#1](https://github.com/lordskyzw/Jailor/issues/1)
+[#2] Make it work outside LAN
