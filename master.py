@@ -1,8 +1,7 @@
-#THIS ONLY SERVES TO RECEIVE THE SECRET KEY
+########################################## THIS ONLY SERVES TO RECEIVE THE SECRET KEY ########################################################
 
 import socket
 import threading
-from Laboratory import encryption
 
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE ="Disconnected!"
@@ -41,5 +40,6 @@ def start():
         thread.start()
         print(f"Active Connections: {threading.active_count() - 1}")
 
-print(ADDR)
-start()
+if __name__ == '__main__':
+    print(ADDR)
+    start()
